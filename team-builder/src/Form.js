@@ -50,9 +50,11 @@ export default function Form () {
                 placeholder="Enter your role"
                 onChange={handleChange}
                 value={user.role}
-                />
-                
+                />  
             </div>
+            <button type="submit" className="btn btn-primary">
+                Submit
+            </button>
         </form>
     );
 }

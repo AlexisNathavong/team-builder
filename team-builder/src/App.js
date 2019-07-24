@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Form from "./Form";
-
+import {people} from "./Data";
 
 function App() {
 
@@ -10,15 +10,16 @@ function App() {
   return (
     <div className="App">
       
-       <h1>Testing</h1>
-       {member.map(person => (
-         <Form key={person.info} info={person} />
-       ))}
-       <Form />
+      <h1>Testing</h1>
+      {people.map(person => (
+        <Form people={person} />
+
+      ))}
+
+      <Form />
       
-       <button type="edit-button" className="btn btn-primary">
-          Edit Button
-      </button>
+      
+      
     </div>
   );
 }
