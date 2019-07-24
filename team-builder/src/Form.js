@@ -1,22 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 
 
-export default function Form ({info}) {
+export default function Form () {
+    const [user, setUser] = useState({name: "", email: "", role: ""});
+
+    function handleChange(event) {
+        const updatedUser = {...user, [event.target.name]: event.target.value};
+        console.log("handleChange", event.target.name, event.target.value, updatedUser);
+        setUser(updatedUser);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log("user state", user);
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label>Name:</label>
-                <input/>
+                <input
+                  type="name"
+                  className="form-group"
+                  name="name"
+                  placeholder="Enter your Name"
+                  onChange={handleChange}
+                  value={user.name}
+                  />
 
             </div>
             <div className="form-group">
                 <label>Email:</label>
-                <input/>
+                <input
+                type="email"
+                className="form-group"
+                name="email"
+                placeholder="Enter email"
+                onChange={handleChange}
+                value={user.email}
+                />
                 
             </div>
             <div className="form-group">
                 <label>Role:</label>
-                <input/>
+                <input
+                type="role"
+                className="form-group"
+                name="role"
+                placeholder="Enter your role"
+                onChange={handleChange}
+                value={user.role}
+                />
                 
             </div>
         </form>
