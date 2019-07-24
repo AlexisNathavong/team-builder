@@ -5,20 +5,17 @@ import {people} from "./Data";
 
 function App() {
 
-  const [member, setMember] = useState([]);
-  console.log(member);
+  const [members, setMembers] = useState(people);
+  console.log(members);
+
   return (
     <div className="App">
       
       <h1>Testing</h1>
-      {people.map(person => (
-        <Form people={person} />
+      {members.map((person, index) => (
+        <Form key={index} people={person} />
 
       ))}
-
-      <Form />
-      
-      
       
     </div>
   );

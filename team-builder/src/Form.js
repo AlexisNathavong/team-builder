@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 
-export default function Form () {
-    const [user, setUser] = useState({name: "", email: "", role: ""});
+export default function Form (props) {
+    console.log(props);
+    const [user, setUser] = useState({name: props.people.name, email: props.people.email, role: props.people.role});
 
     function handleChange(event) {
         const updatedUser = {...user, [event.target.name]: event.target.value};
