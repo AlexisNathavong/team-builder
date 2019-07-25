@@ -6,9 +6,9 @@ console.log("Welcome", props);
 
     return (
         <div className="Team">
-            <h3>Name: {props.name}</h3>
-            <h3>Name: {props.email}</h3>
-            <h3>Name: {props.role}</h3>
+            <h3>Name: {props.member.name}</h3>
+            <h3>Email: {props.member.email}</h3>
+            <h3>Role: {props.member.role}</h3>
         </div>
     );
 }

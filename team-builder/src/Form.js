@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 
-export default function Form (members, setMembers) {
-    console.log(members);
+export default function Form (props) {
+    console.log(props);
     const [user, setUser] = useState({name: "", email: "", role: ""});
 
     function handleChange(event) {
@@ -13,6 +13,7 @@ export default function Form (members, setMembers) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        props.newMember(user);
         console.log("user state", user);
     }
 
