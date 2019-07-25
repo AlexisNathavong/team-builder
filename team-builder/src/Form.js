@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 
-export default function Form (props) {
-    console.log(props);
-    const [user, setUser] = useState({name: props.people.name, email: props.people.email, role: props.people.role});
+export default function Form (members, setMembers) {
+    console.log(members);
+    const [user, setUser] = useState({name: "", email: "", role: ""});
 
     function handleChange(event) {
         const updatedUser = {...user, [event.target.name]: event.target.value};
@@ -53,9 +53,7 @@ export default function Form (props) {
                 value={user.role}
                 />  
             </div>
-            <button type="submit" className="btn btn-primary">
-                Submit
-            </button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     );
 }
